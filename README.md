@@ -7,9 +7,21 @@ Compile openssl and curl for Android
 Make sure you have `Android NDK` installed.
 
 You may also need to install `autoconf` and `libtool` toolchains as well as build essentials.
+clone repo beefore download with command prompt
+enter MSYS32
+## Download MSYS2 and configure enviroment might need to download other pacman
+```
+export NDK=/D/android-sdk/ndk/23.1.7779620 # e.g. D:/android-sdk/ndk/23.0.7599858
+export HOST_TAG=windows-x86_64 # e.g. darwin-x86_64, see https://developer.android.com/ndk/guides/other_build_systems#overview
+export MIN_SDK_VERSION=21 # or any version you want
 
-## Download
+pacman -S autoconf automake
 
+chmod +x ./build.sh
+./build.sh
+
+
+```
 If you do not want to compile them yourself, you can download pre-compiled static libraries from [releases](https://github.com/robertying/openssl-curl-android/releases). They are in `build.tar.gz`.
 
 Doing your own compilation is recommended, since the pre-compiled binary can become outdated soon.
