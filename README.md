@@ -42,6 +42,16 @@ Instead use:
 
     C:\>%NDK%/toolchains/llvm/prebuilt/windows-x86_64/bin/aarch64-linux-android21-clang++ src.cpp
 
+open D:\android-toolchain2\arm64\bin\aarch64-linux-android21-clang change clang.exe to clang120.exe or what ever is there
+#!/bin/bash
+if [ "$1" != "-cc1" ]; then
+    `dirname $0`/clang.exe --target=aarch64-linux-android21 "$@"
+else
+    # Target is already an argument.
+    `dirname $0`/clang120.exe "$@"
+fi
+
+
 
 ```
 
