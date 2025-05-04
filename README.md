@@ -16,6 +16,7 @@ export HOST_TAG=windows-x86_64 # e.g. darwin-x86_64, see https://developer.andro
 export MIN_SDK_VERSION=21 # or any version you want
 
 pacman -S autoconf automake
+pacman -S libtool
 
 chmod +x ./build.sh
 ./build.sh
