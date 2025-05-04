@@ -8,7 +8,7 @@ Make sure you have `Android NDK` installed.
 
 You may also need to install `autoconf` and `libtool` toolchains as well as build essentials.
 clone repo beefore download with command prompt
-enter MSYS32
+enter MSYS2
 ## Download MSYS2 and configure enviroment might need to download other pacman
 ```
 export NDK=/D/android-sdk/ndk/23.1.7779620 # e.g. D:/android-sdk/ndk/23.0.7599858
