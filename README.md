@@ -12,12 +12,16 @@ enter MSYS2
 ## Download MSYS2 and configure enviroment might need to download other pacman
 ```
 in MSYS2 terminal:
+echo $MSYSTEM
+
 
 export NDK=/D/android-sdk/ndk/23.1.7779620 # e.g. D:/android-sdk/ndk/23.0.7599858
 export HOST_TAG=windows-x86_64 # e.g. darwin-x86_64, see https://developer.android.com/ndk/guides/other_build_systems#overview
 export MIN_SDK_VERSION=21 # or any version you want
 
-pacman -S mingw-w64-ucrt-x86_64-python
+pacman -S mingw-w64-ucrt-x86_64-python mingw-w64-ucrt-x86_64-python-pip
+#pacman -S mingw-w64-x86_64-python mingw-w64-x86_64-python-pip
+pip install diskutils
 python -v
 cd /d/android-sdk/ndk/23.1.7779620/build/tools
 python make_standalone_toolchain.py --api 21 --arch arm64 --install-dir /d/android-toolchain2/arm64
