@@ -21,11 +21,29 @@ export MIN_SDK_VERSION=21 # or any version you want
 
 pacman -S mingw-w64-ucrt-x86_64-python mingw-w64-ucrt-x86_64-python-pip
 #pacman -S mingw-w64-x86_64-python mingw-w64-x86_64-python-pip
-pip install diskutils
+#?? pip install diskutils
+
 python -v
 cd /d/android-sdk/ndk/23.1.7779620/build/tools
 python make_standalone_toolchain.py --api 21 --arch arm64 --install-dir /d/android-toolchain2/arm64
+```
+output something like:
+k10@DESKTOP-DVP2O8B UCRT64 /d/android-sdk/ndk/23.1.7779620/build/tools
+$ python make_standalone_toolchain.py --api 21 --arch arm64 --install-dir /d/android-toolchain2/arm64
+WARNING:__main__:make_standalone_toolchain.py is no longer necessary. The
+%NDK%/toolchains/llvm/prebuilt/windows-x86_64/bin directory contains target-specific scripts that perform
+the same task. For example, instead of:
 
+    C:\>python %NDK%/build/tools/make_standalone_toolchain.py \
+        --arch arm64 --api 21 --install-dir toolchain
+    C:\>toolchain/bin/clang++ src.cpp
+
+Instead use:
+
+    C:\>%NDK%/toolchains/llvm/prebuilt/windows-x86_64/bin/aarch64-linux-android21-clang++ src.cpp
+
+
+```
 
 pacman -S autoconf automake
 pacman -S libtool
